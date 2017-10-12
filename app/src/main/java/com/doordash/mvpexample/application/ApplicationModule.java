@@ -9,8 +9,8 @@ import com.doordash.mvpexample.helpers.Constants;
 import com.doordash.mvpexample.helpers.SharedPreferencesHelper;
 import com.doordash.mvpexample.helpers.rx.RxSchedulerProvider;
 import com.doordash.mvpexample.helpers.rx.ThreadedRxSchedulerProvider;
-import com.doordash.mvpexample.ui.login.LoginContract;
-import com.doordash.mvpexample.ui.login.LoginPresenter;
+import com.doordash.mvpexample.ui.restaurantlist.RestaurantListContract;
+import com.doordash.mvpexample.ui.restaurantlist.RestaurantListPresenter;
 
 import dagger.Module;
 import dagger.Provides;
@@ -44,9 +44,9 @@ public class ApplicationModule {
     }
 
     @Provides
-    LoginContract.Presenter providesLoginPresenter(RxSchedulerProvider rxSchedulerProvider,
-                                                   AuthenticationDataSource authenticationDataSource) {
-        return new LoginPresenter(rxSchedulerProvider, authenticationDataSource);
+    RestaurantListContract.Presenter providesLoginPresenter(RxSchedulerProvider rxSchedulerProvider,
+                                                            AuthenticationDataSource authenticationDataSource) {
+        return new RestaurantListPresenter(rxSchedulerProvider, authenticationDataSource);
     }
 
     @Provides

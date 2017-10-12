@@ -1,6 +1,6 @@
 package com.doordash.mvpexample.application;
 
-import com.doordash.mvpexample.ui.login.LoginActivity;
+import com.doordash.mvpexample.ui.restaurantlist.RestaurantListActivity;
 
 import javax.inject.Singleton;
 
@@ -12,6 +12,6 @@ public interface ApplicationComponent {
 
     void inject(MvpApplication app);
 
-    void inject(LoginActivity loginActivity);
+    void inject(RestaurantListActivity restaurantListActivity);
 
 }

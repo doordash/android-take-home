@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.doordash.mvpexample.ui.login.LoginActivity;
+import com.doordash.mvpexample.ui.restaurantlist.RestaurantListActivity;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -27,8 +27,8 @@ public class ExampleInstrumentedTest {
     public DaggerMockRule
 
     @Rule
-    public ActivityTestRule<LoginActivity> activityRule
-            = new ActivityTestRule<>(LoginActivity.class, false, false);
+    public ActivityTestRule<RestaurantListActivity> activityRule
+            = new ActivityTestRule<>(RestaurantListActivity.class, false, false);
 
     @Before
     public void setup() {
