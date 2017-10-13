@@ -3,9 +3,7 @@ package com.doordash.mvpexample.ui;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
-
 import com.doordash.mvpexample.helpers.rx.RxSchedulerProvider;
-
 import io.reactivex.SingleTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -30,7 +28,6 @@ public class BaseRxPresenter<V> implements BaseContract.BasePresenter<V> {
 
     @Override
     public void onResume() {
-
     }
 
     @CallSuper
@@ -44,8 +41,8 @@ public class BaseRxPresenter<V> implements BaseContract.BasePresenter<V> {
         this.view = view;
     }
 
-    protected void addDisposable(Disposable d) {
-        compositeDisposable.add(d);
+    protected void addDisposable(Disposable disposable) {
+        compositeDisposable.add(disposable);
     }
 
     protected static <T> SingleTransformer<T, T> applySingleSchedulers() {

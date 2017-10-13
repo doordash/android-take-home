@@ -54,6 +54,4 @@ public class AuthenticationManagerTest {
         Token token = authenticationManager.getAuthToken(EMAIL, PASSWORD).blockingGet();
         assertEquals(CACHED_TOKEN, token.getToken());
     }
-
-
 }

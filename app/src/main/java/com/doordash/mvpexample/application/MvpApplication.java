@@ -28,6 +28,4 @@ public class MvpApplication extends Application {
                 .applicationModule(new ApplicationModule(this))
                 .build();
     }
-
-
 }

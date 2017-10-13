@@ -1,13 +1,12 @@
 package com.doordash.mvpexample.application;
 
 import com.doordash.mvpexample.ui.restaurantlist.RestaurantListActivity;
+import dagger.Component;
 
 import javax.inject.Singleton;
 
-import dagger.Component;
-
 @Singleton
-@Component(modules = {ApplicationModule.class})
+@Component(modules = {ApplicationModule.class, NetworkModule.class})
 public interface ApplicationComponent {
 
     void inject(MvpApplication app);

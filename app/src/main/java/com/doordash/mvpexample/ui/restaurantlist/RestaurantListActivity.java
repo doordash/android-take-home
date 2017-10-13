@@ -37,6 +37,13 @@ public class RestaurantListActivity
         ButterKnife.bind(this);
         setupRecyclerView();
         presenter.setView(this);
+        presenter.onCreate();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.onResume();
     }
 
     @Override
