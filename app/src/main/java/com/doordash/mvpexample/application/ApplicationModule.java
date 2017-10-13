@@ -1,14 +1,8 @@
 package com.doordash.mvpexample.application;
 
-import android.content.SharedPreferences;
-import com.doordash.mvpexample.api.AuthenticationApi;
 import com.doordash.mvpexample.api.RestaurantApi;
-import com.doordash.mvpexample.data.AuthenticationDataSource;
-import com.doordash.mvpexample.data.AuthenticationManager;
 import com.doordash.mvpexample.data.RestaurantDataSource;
 import com.doordash.mvpexample.data.RestaurantManager;
-import com.doordash.mvpexample.helpers.Constants;
-import com.doordash.mvpexample.helpers.SharedPreferencesHelper;
 import com.doordash.mvpexample.helpers.rx.RxSchedulerProvider;
 import com.doordash.mvpexample.helpers.rx.ThreadedRxSchedulerProvider;
 import com.doordash.mvpexample.ui.restaurantlist.RestaurantListContract;
@@ -34,12 +28,6 @@ public class ApplicationModule {
     }
 
     @Provides
-    AuthenticationDataSource providesAuthenticationDataSource(AuthenticationApi authenticationApi,
-                                                              SharedPreferencesHelper sharedPreferencesHelper) {
-        return new AuthenticationManager(authenticationApi, sharedPreferencesHelper);
-    }
-
-    @Provides
     RestaurantDataSource providesRestaurantDataSource(RestaurantApi restaurantApi) {
         return new RestaurantManager(restaurantApi);
     }
@@ -53,10 +41,5 @@ public class ApplicationModule {
     RestaurantListContract.Presenter providesLoginPresenter(RxSchedulerProvider rxSchedulerProvider,
                                                             RestaurantDataSource restaurantDataSource) {
         return new RestaurantListPresenter(rxSchedulerProvider, restaurantDataSource);
-    }
-
-    @Provides
-    SharedPreferences providesSharedPreferences() {
-        return application.getSharedPreferences(Constants.SHARED_PREFS_NAME, 0);
     }
 }

@@ -3,7 +3,6 @@ package com.doordash.mvpexample.data;
 import android.support.annotation.VisibleForTesting;
 import com.doordash.mvpexample.api.RestaurantApi;
 import com.doordash.mvpexample.models.Restaurant;
-import com.doordash.mvpexample.models.Token;
 import io.reactivex.Single;
 
 import javax.inject.Inject;
