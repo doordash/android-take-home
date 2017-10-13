@@ -5,8 +5,8 @@
                 xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="80dp"
+        android:layout_width="144dp"
+        android:layout_height="68dp"
         android:id="@+id/restaurant_logo_imageview"
         android:layout_marginStart="15dp"
         android:layout_centerVertical="true"
@@ -17,20 +17,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/restaurant_logo_imageview"
-        android:layout_toRightOf="@+id/restaurant_logo_imageview">
+        android:layout_toRightOf="@+id/restaurant_logo_imageview"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp">
 
         <TextView
             android:id="@+id/restaurant_name_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:lines="1"
+            android:ellipsize="end"
             tools:text="Restaurant Name"/>
 
         <TextView
             android:id="@+id/cuisine_name_textview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"/>
 
         <TextView
             android:id="@+id/eta_textview"

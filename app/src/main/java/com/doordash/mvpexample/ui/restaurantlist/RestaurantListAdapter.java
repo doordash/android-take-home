@@ -78,9 +78,11 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
                 return tags[0];
             } else if (tags.length > 1) {
                 StringBuilder stringBuilder = new StringBuilder();
-                for (String tag : tags) {
-                    stringBuilder.append(tag);
-                    stringBuilder.append(", ");
+                for (int i = 0; i < tags.length; i++) {
+                    stringBuilder.append(tags[i]);
+                    if (i < tags.length - 1) {
+                        stringBuilder.append(", ");
+                    }
                 }
                 return stringBuilder.toString();
             } else {
